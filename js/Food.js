@@ -11,9 +11,11 @@ class Food{
         })
     }
     updateFoodStock(){
-        database.ref('/').update({
+        if (foods > 1){
+            database.ref('/').update({
             food:foods-1
-        });
+            });
+        }
         fedTime = hour();
         database.ref('/').update({
             hour: fedTime
