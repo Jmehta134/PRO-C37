@@ -109,11 +109,14 @@ function writeStock(x){
 }*/
 //function to feed Dog i.e, remove food
 function feedDog(){
-  foodObj.updateFoodStock();
-  //writeStock(foods);
-  dog.addImage(happydog);
-  foodObj.fedImg = true;
-  dogi = 1;
+  if (foods > 0){
+    foods=foods-1;
+    foodObj.updateFoodStock();
+    //writeStock(foods);
+    dog.addImage(happydog);
+    foodObj.fedImg = true;
+    dogi = 1;
+  }
 }
 // function to add food 
 function addFood(){
